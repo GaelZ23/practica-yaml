@@ -1,0 +1,12 @@
+{
+  "name": "simple-node-app",
+  "version": "1.0.0",
+  "description": "Proyecto simple en Node.js para practicar YAML y despliegue",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
