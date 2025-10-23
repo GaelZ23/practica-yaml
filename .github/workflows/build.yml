@@ -1,0 +1,27 @@
+name: Compilación automática (Node.js)
+
+on:
+  push:
+    branches: [ master ]  # o 'main' si tu rama principal se llama así
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar la aplicación (modo prueba)
+        run: |
+          node app.js &
+          sleep 3
+          curl -I http://localhost:3000
